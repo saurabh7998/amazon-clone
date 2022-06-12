@@ -1,8 +1,12 @@
 import React from "react";
 import "./Home.css";
 import Product from "./Product";
+import { useStateValue } from "./StateProvider";
+
 
 const Home = () => {
+    const[{cart}, ] = useStateValue();
+    console.log({cart});
     return (
         <div className="home">
             <img

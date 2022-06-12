@@ -4,8 +4,11 @@ import SearchIcon from "@mui/icons-material/Search"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import './Header.css';
+import { useStateValue } from "./StateProvider";
 
 const Header = () => {
+    const[{cart}, dispatch] = useStateValue();
+
     return(
         <nav className="header">
             {/* amazon logo on the left */}
@@ -50,12 +53,12 @@ const Header = () => {
                 </Link>
 
                 {/* 4th Link */}
-                <Link to={'/login'} className="header__link">
+                <Link to={'/checkout'} className="header__link">
                     <div className="header__shoppingCart">
                         {/* Shopping cart icon */}
                         <ShoppingCartIcon />
                         {/* No. of items in the cart */}
-                        <span className="header__optionCartCount">0</span>
+                        <span className="header__optionCartCount">{cart.length}</span>
                     </div>
                 </Link>
 
