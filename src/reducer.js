@@ -2,7 +2,7 @@ export const initialState = {
     cart : []
 };
 
-function reducer(state, action){
+function reducer(state = initialState, action){
     switch(action.type){
         case 'ADD_TO_CART':
             //Logic to add to basket
@@ -12,6 +12,21 @@ function reducer(state, action){
             }
             break;
         case 'REMOVE_FROM_CART':
+            let newCart = [...state.cart];
+
+            const index = state.cart.findIndex((cartItem) => cartItem.id === action.id)
+
+            if(index >= 0){
+                //Item exists
+                newCart.splice(index, 1);
+            }else{
+                console.warn("Item does not exist!");
+            }
+
+            return {
+                ...state,
+                cart: newCart
+            };
             break;
         default:
             return state;

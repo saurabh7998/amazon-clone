@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 import Header from './Header';
 import { Fragment } from 'react';
 import Home from './Home';
+import Checkout from './Checkout';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Route path='/checkout' element={
               <Fragment>
                   <Header/>
-                  <h1>Checkout</h1>
+                  <Checkout/>
               </Fragment>   
           }/>
           <Route path='/' element={
