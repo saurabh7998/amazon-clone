@@ -22,7 +22,7 @@ const Home = () => {
                     img={"https://m.media-amazon.com/images/I/513Y5o-DYtL.jpg"}
                 />
                 <Product 
-                    id={"1234"} 
+                    id={"1235"} 
                     title={"Atomic Habits"} 
                     ratings={5} 
                     price={11.98} 
@@ -31,21 +31,21 @@ const Home = () => {
             </div>
             <div className="home__row">
                 <Product 
-                    id={"1234"} 
+                    id={"1236"} 
                     title={"Atomic Habits"} 
                     ratings={5} 
                     price={11.98} 
                     img={"https://m.media-amazon.com/images/I/513Y5o-DYtL.jpg"}
                 />
                 <Product 
-                    id={"1234"} 
+                    id={"1237"} 
                     title={"Atomic Habits"} 
                     ratings={5} 
                     price={11.98} 
                     img={"https://m.media-amazon.com/images/I/513Y5o-DYtL.jpg"}
                 />
                 <Product 
-                    id={"1234"} 
+                    id={"1238"} 
                     title={"Atomic Habits"} 
                     ratings={5} 
                     price={11.98} 
@@ -54,7 +54,7 @@ const Home = () => {
             </div>
             <div className="home__row">
                 <Product 
-                    id={"1234"} 
+                    id={"1239"} 
                     title={"Atomic Habits"} 
                     ratings={5} 
                     price={11.98} 

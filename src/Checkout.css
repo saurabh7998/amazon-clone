@@ -1,3 +1,9 @@
+.checkout {
+    display: flex;
+    height: max-content;
+    padding: 20px;
+}
+
 .checkout__image{
     width: 100%;
 }
