@@ -4,13 +4,16 @@ import Header from './Header';
 import { Fragment } from 'react';
 import Home from './Home';
 import Checkout from './Checkout';
+import Login from './Login';
 
 function App() {
   return (
     <Router>
       <div className="app">
         <Routes>
-          <Route path='/login' element={<h1>Login</h1>}/>
+          <Route path='/login' element={
+            <Login />
+          }/>
           <Route path='/checkout' element={
               <Fragment>
                   <Header/>

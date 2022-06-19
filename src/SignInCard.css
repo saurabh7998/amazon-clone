@@ -1,0 +1,26 @@
+.signIn {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.2;
+    /* font-family: "Amazon Ember",Arial,sans-serif; */
+}
+
+label {
+    display: block;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.signIn__button {
+    background-color: #f0c14b;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+}

@@ -1,0 +1,12 @@
+.login {
+    background-color: white;
+}
+
+.login__header__logo{
+    margin: 10px 0 0 500px;
+    width: 110px;
+    height: 51px;
+    align-items: center;
+    object-fit: contain;
+}
+
