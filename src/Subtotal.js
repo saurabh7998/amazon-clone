@@ -6,11 +6,10 @@ import "./Subtotal.css";
 
 
 
+const getTotal = (cart) => (cart?.reduce((amount, item) => item.price + amount, 0));
+
 const Subtotal = () => {
     const[{cart}, ] = useStateValue()
-
-    
-
     
     return (
         <div className="subtotal">
@@ -24,7 +23,7 @@ const Subtotal = () => {
                     </>
                 )}
                 decimalScale={2}
-                value={0}
+                value={getTotal(cart)}
                 displayType={"text"}
                 thousandSeparator={true}
                 prefix={"$"}

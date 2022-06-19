@@ -8,13 +8,14 @@ export const initialState = {
 function reducer(state = initialState, action){
     switch(action.type){
         case 'ADD_TO_CART':
-            //Logic to add to basket
+            //Logic to add to cart
             return{
-                ...state,
+                // ...state,
                 cart: [...state.cart, action.item]
             }
             break;
         case 'REMOVE_FROM_CART':
+            //Logic to remove from cart
             let newCart = [...state.cart];
 
             const index = state.cart.findIndex((cartItem) => cartItem.id === action.id)
@@ -27,7 +28,7 @@ function reducer(state = initialState, action){
             }
 
             return {
-                ...state,
+                // ...state,
                 cart: newCart
             };
             break;
