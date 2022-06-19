@@ -58,7 +58,7 @@ const Header = () => {
                         {/* Shopping cart icon */}
                         <ShoppingCartIcon />
                         {/* No. of items in the cart */}
-                        <span className="header__optionCartCount">{cart.length}</span>
+                        <span className="header__optionCartCount">{cart?.length}</span>
                     </div>
                 </Link>
 

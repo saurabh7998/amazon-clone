@@ -13,7 +13,7 @@ const Checkout = () => {
             <div className="checkout__left">
                 <img className="checkout__image" src="https://images-na.ssl-images-amazon.com/images/G/01/kindle-content-smeghn/2022/kBD0606/KBHP_1500x300.jpg"/>
 
-                {(cart.length === 0 ) ? (
+                {(cart?.length === 0 ) ? (
                 <div>  Your shopping cart is empty. Please add items to your cart to proceed.</div>
                 ) :
                 (

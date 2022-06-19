@@ -41,7 +41,7 @@ const Product = ({id, title, price, ratings, img}) => {
                 </div>
             </div>
             <img className="product__image" src={`${img}`}/>
-            <button onClick={() => addToCart()}>Add to Cart</button>
+            <button onClick={addToCart}>Add to Cart</button>
         </div>
     )
 }

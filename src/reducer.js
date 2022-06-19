@@ -1,5 +1,6 @@
 export const initialState = {
-    cart : []
+    cart : [],
+    user: null,
 };
 
 
@@ -7,10 +8,15 @@ export const initialState = {
 
 function reducer(state = initialState, action){
     switch(action.type){
+        case 'SET_USER':
+            return {
+                ...state,
+                user: action.user
+            }
         case 'ADD_TO_CART':
             //Logic to add to cart
             return{
-                // ...state,
+                ...state,
                 cart: [...state.cart, action.item]
             }
             break;
@@ -28,7 +34,7 @@ function reducer(state = initialState, action){
             }
 
             return {
-                // ...state,
+                ...state,
                 cart: newCart
             };
             break;

@@ -6,7 +6,7 @@ import { useStateValue } from "./StateProvider";
 
 const Home = () => {
     const[{cart}, ] = useStateValue();
-    console.log({cart});
+    // console.log({cart});
     return (
         <div className="home">
             <img
