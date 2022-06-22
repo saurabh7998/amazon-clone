@@ -5,9 +5,16 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import './Header.css';
 import { useStateValue } from "./StateProvider";
+import { auth } from "./firebase";
 
 const Header = () => {
-    const[{cart}, dispatch] = useStateValue();
+    const[{cart, user}, dispatch] = useStateValue();
+
+    const login_out = () => {
+        if(user){
+            auth.signOut();
+        }
+    }
 
     return(
         <nav className="header">
@@ -29,10 +36,10 @@ const Header = () => {
             {/* Three links */}
             <div className="header__navLinks">
                 {/* 1st link */}
-                <Link to={'/login'} className="header__link">
-                    <div className="header__option">
-                        <span className="header__optionLineOne">Hello Saurabh</span>
-                        <span className="header__optionLineTwo"> Sign in</span>
+                <Link to={!user && '/login'} className="header__link">
+                    <div onClick={login_out} className="header__option">
+                        <span className="header__optionLineOne">Hello {user?.email}</span>
+                        <span className="header__optionLineTwo">{user ? 'Sign Out': 'Sign in'}</span>
                     </div>
                 </Link>
 
