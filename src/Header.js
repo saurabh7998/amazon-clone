@@ -9,6 +9,7 @@ import { auth } from "./firebase";
 
 const Header = () => {
     const[{cart, user}, dispatch] = useStateValue();
+    console.log("displayName " + user?.displayName);
 
     const login_out = () => {
         if(user){
@@ -38,13 +39,13 @@ const Header = () => {
                 {/* 1st link */}
                 <Link to={!user && '/login'} className="header__link">
                     <div onClick={login_out} className="header__option">
-                        <span className="header__optionLineOne">Hello {user?.email}</span>
+                        <span className="header__optionLineOne">Hello {user?.displayName}</span>
                         <span className="header__optionLineTwo">{user ? 'Sign Out': 'Sign in'}</span>
                     </div>
                 </Link>
 
                 {/* 2nd Link */}
-                <Link to={'/login'} className="header__link">
+                <Link to={'/'} className="header__link">
                     <div className="header__option">
                         <span className="header__optionLineOne">Returns</span>
                         <span className="header__optionLineTwo"> & Orders </span>
@@ -52,7 +53,7 @@ const Header = () => {
                 </Link>
 
                 {/* 3rd Link */}
-                <Link to={'/login'} className="header__link">
+                <Link to={'/'} className="header__link">
                     <div className="header__option">
                         <span className="header__optionLineOne">Your</span>
                         <span className="header__optionLineTwo"> Prime</span>
