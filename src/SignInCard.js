@@ -41,6 +41,9 @@ const SignInCard = () => {
         setPassword(e.target.value);
     }
 
+    const redirectToSignUp = () => {
+        navigate("/register")
+    }
 
     return(
         <div className="signIn">
@@ -60,7 +63,8 @@ const SignInCard = () => {
             </form>
             <p>By continuing, you agree to Amazon's Conditions of Use and Privacy Notice.</p>
 
-            <button onClick={signUp} className="signIn__createAccBtn">Create your Amazon account</button>
+            {/* <button onClick={signUp} className="signIn__createAccBtn">Create your Amazon account</button> */}
+            <button onClick={redirectToSignUp} className="signIn__createAccBtn">Create your Amazon account</button>
         </div>
     )
 }

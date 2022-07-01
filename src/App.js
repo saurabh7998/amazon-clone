@@ -7,6 +7,7 @@ import Checkout from './Checkout';
 import Login from './Login';
 import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
+import SignUp from './SignUp';
 
 function App() {
 
@@ -53,7 +54,10 @@ function App() {
                   <Header/>
                   <Home/>
               </Fragment>
-            }/>
+          }/>
+          <Route path='/register' element={
+              <SignUp/>
+          }/>
         </Routes>
       </div>
     </Router>
