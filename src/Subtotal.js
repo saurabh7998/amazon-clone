@@ -13,7 +13,7 @@ const Subtotal = () => {
     
     return (
         <div className="subtotal">
-            <CurrencyFormat
+            {/* <CurrencyFormat
                 renderText={(value) => (
                     <>
                         <p>Subtotal ({cart.length} items):<strong>{`${value}`}</strong></p>
@@ -27,7 +27,11 @@ const Subtotal = () => {
                 displayType={"text"}
                 thousandSeparator={true}
                 prefix={"$"}
-            />
+            /> */}
+            <p>Subtotal ({cart.length} items):<strong>${getTotal(cart)}</strong></p>
+            <small>
+                    <input type="checkbox"/> This order contains a gift
+            </small>
             <button>Proceed to Checkout</button>
         </div>
     )
