@@ -1,25 +1,27 @@
 import React from "react";
 import "./Product.css";
-import { useStateValue } from "./StateProvider";
+
+import {useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {addToCart} from "./reducers/cartReducer";
 
 
 const Product = ({id, title, price, ratings, img}) => {
     
     //const[state, dispatch] = useStateValue()
-    const[{cart}, dispatch] = useStateValue();
+    const {cart, user} = useSelector((state) => state.cart)
 
-    const addToCart = () => {
+    const dispatch = useDispatch()
+
+    const addInCart = () => {
         //Add to bas{ket
-        dispatch({
-            type: 'ADD_TO_CART',
-            item: {
-                id: id,
-                title: title,
-                price: price,
-                ratings: ratings,
-                img: img
-            },
-        });
+        dispatch(addToCart({
+                               id: id,
+                               title: title,
+                               price: price,
+                               ratings: ratings,
+                               img: img
+                           },))
     };
 
     return (
@@ -41,7 +43,7 @@ const Product = ({id, title, price, ratings, img}) => {
                 </div>
             </div>
             <img className="product__image" src={`${img}`}/>
-            <button onClick={addToCart}>Add to Cart</button>
+            <button onClick={addInCart}>Add to Cart</button>
         </div>
     )
 }

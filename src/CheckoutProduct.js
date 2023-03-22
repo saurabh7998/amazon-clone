@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import "./CheckoutProduct.css";
 import { useStateValue } from "./StateProvider";
+import {useDispatch} from "react-redux";
+import {removeFromCart} from "./reducers/cartReducer";
 
 const CheckoutProduct  = ({id, title, price, ratings, img}) => {
 
-    const[, dispatch] = useStateValue();
+    const dispatch = useDispatch()
 
-    const removeFromCart = () => {
-        dispatch({
-            type: 'REMOVE_FROM_CART',
-            id,
-            title,
-            price,
-            ratings,
-            img
-        })
+    const remFromCart = () => {
+        dispatch(removeFromCart({
+                                    id,
+                                    title,
+                                    price,
+                                    ratings,
+                                    img
+                                }))
     }
 
     return (
@@ -36,7 +37,7 @@ const CheckoutProduct  = ({id, title, price, ratings, img}) => {
                         })
                     }
                 </div>
-                <button onClick={removeFromCart}>Remove from cart</button>
+                <button onClick={remFromCart}>Remove from cart</button>
             </div>
         </div>
     )

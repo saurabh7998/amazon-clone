@@ -2,10 +2,12 @@ import React from "react";
 import "./Home.css";
 import Product from "./Product";
 import { useStateValue } from "./StateProvider";
+import {useSelector} from "react-redux";
 
 
 const Home = () => {
-    const[{cart}, ] = useStateValue();
+
+    const {cart, user} = useSelector((state) => state.cart)
     // console.log({cart});
     return (
         <div className="home">
@@ -54,7 +56,7 @@ const Home = () => {
             </div>
             <div className="home__row">
                 <Product 
-                    id={"1238"} 
+                    id={"1239"}
                     title={"Sony 65 Inch 4K Ultra HD TV A80K Series: BRAVIA XR OLED Smart Google TV with Dolby Vision HDR and Exclusive Features for The Playstation® 5 XR65A80K- 2022 Model"} 
                     ratings={5} 
                     price={2498} 

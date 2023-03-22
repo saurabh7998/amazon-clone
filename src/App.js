@@ -6,27 +6,25 @@ import Home from './Home';
 import Checkout from './Checkout';
 import Login from './Login';
 import { auth } from './firebase';
-import { useStateValue } from './StateProvider';
+// import { useStateValue } from './StateProvider';
 import SignUp from './SignUp';
+import {useDispatch, useSelector} from "react-redux";
+import {setUser} from "./reducers/cartReducer";
 
 function App() {
 
-  const[ , dispatch] = useStateValue();
+  // const[ , dispatch] = useStateValue();
+    const {cart, user} = useSelector((state) => state.cart)
+    const dispatch = useDispatch()
 
    useEffect(() => {
      const unsubscribe = auth.onAuthStateChanged((authUser) => {
        if (authUser) {
          //user is logged in.
-         dispatch({
-           type: 'SET_USER',
-           user: authUser,
-         });
+         dispatch(setUser(authUser))
        } else {
          //user is logged out.
-         dispatch({
-          type: 'SET_USER',
-          user: null,
-        });
+         dispatch(setUser(null))
        }
      });
 

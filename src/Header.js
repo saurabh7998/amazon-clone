@@ -2,13 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import {useState} from "react";
 
 import './Header.css';
-import { useStateValue } from "./StateProvider";
+
 import { auth } from "./firebase";
+import {useSelector} from "react-redux";
 
 const Header = () => {
-    const[{cart, user}, dispatch] = useStateValue();
+
+    const {cart, user} = useSelector((state) => state.cart)
     console.log("displayName " + user?.displayName);
 
     const login_out = () => {
